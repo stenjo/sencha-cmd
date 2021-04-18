@@ -18,5 +18,5 @@ runs:
       with:
         args: -O sencha.zip http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
     - run: |
-      unzip sencha.zip 
-      ls -al
+        unzip sencha.zip 
+        ls -al
