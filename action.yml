@@ -18,7 +18,7 @@ runs:
         curl -O http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip --silent
         unzip SenchaCmd-7.3.0.19-linux-amd64.sh.zip
         chmod +x SenchaCmd-7.3.0.19-linux-amd64.sh
-        ./SenchaCmd-7.3.0.19-linux-amd64.sh
+        ./SenchaCmd-7.3.0.19-linux-amd64.sh -q
         ls -al
         sencha --version
       shell: bash
