@@ -20,5 +20,5 @@ runs:
         chmod +x SenchaCmd-7.3.0.19-linux-amd64.sh
         ./SenchaCmd-7.3.0.19-linux-amd64.sh -q
         echo "/home/runner/bin/Sencha/Cmd/7.3.0.19" >> $GITHUB_PATH
-        ls -al /home/runner/bin
+        rm SenchaCmd-7.3.0.19-linux-amd64.*
       shell: bash
