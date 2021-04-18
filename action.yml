@@ -4,7 +4,7 @@ inputs:
   version:
     description: 'Version of Sencha Cmd to use'
     required: false
-    default: '7.3.0.19' # http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
+    default: '7.3.0.19' # http://cdn.sencha.com/cmd/${{inputs.version}}/no-jre/SenchaCmd-${{inputs.version}}-linux-amd64.sh.zip
 outputs:
   installed-path:
     description: 'Location of installed cmd'
@@ -15,10 +15,10 @@ runs:
 
   steps:
     - run: |
-        curl -O http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip --silent
-        unzip SenchaCmd-7.3.0.19-linux-amd64.sh.zip
-        chmod +x SenchaCmd-7.3.0.19-linux-amd64.sh
-        ./SenchaCmd-7.3.0.19-linux-amd64.sh -q
-        echo "/home/runner/bin/Sencha/Cmd/7.3.0.19" >> $GITHUB_PATH
-        rm SenchaCmd-7.3.0.19-linux-amd64.*
+        curl -O http://cdn.sencha.com/cmd/${{inputs.version}}/no-jre/SenchaCmd-${{inputs.version}}-linux-amd64.sh.zip --silent
+        unzip SenchaCmd-${{inputs.version}}-linux-amd64.sh.zip
+        chmod +x SenchaCmd-${{inputs.version}}-linux-amd64.sh
+        ./SenchaCmd-${{inputs.version}}-linux-amd64.sh -q
+        echo "/home/runner/bin/Sencha/Cmd/${{inputs.version}}" >> $GITHUB_PATH
+        rm SenchaCmd-${{inputs.version}}-linux-amd64.*
       shell: bash
