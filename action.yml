@@ -15,7 +15,7 @@ runs:
 
   steps:
     - run: |
-        curl -o --silent sencha.zip http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
-        unzip sencha.zip 
+        curl -O http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip --silent
+        unzip SenchaCmd-7.3.0.19-linux-amd64.sh.zip . 
         ls -al
       shell: bash
