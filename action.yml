@@ -15,8 +15,7 @@ runs:
 
   steps:
     - run: |
-        apt-get install wget -y
-        wget -O sencha.zip http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
+        curl -o --silent sencha.zip http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
         unzip sencha.zip 
         ls -al
       shell: bash
