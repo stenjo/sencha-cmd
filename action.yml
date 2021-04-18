@@ -1,0 +1,22 @@
+name: 'Sencha Cmd'
+description: 'Install and use latest Sencha Cmd into action script'
+inputs:
+  version:
+    description: 'Version of Sencha Cmd to use'
+    required: false
+    default: '7.3.0.19' # http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
+outputs:
+  installed-path:
+    description: 'Location of installed cmd'
+    value: ${{ steps.install.outputs.path}}
+
+runs:
+  using: 'composite'
+
+  steps:
+    - uses: wei/wget@v1
+      with:
+        args: -O sencha.zip http://cdn.sencha.com/cmd/7.3.0.19/no-jre/SenchaCmd-7.3.0.19-linux-amd64.sh.zip
+    - run: |
+      unzip sencha.zip 
+      ls -al
