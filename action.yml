@@ -19,7 +19,7 @@ runs:
         unzip SenchaCmd-7.3.0.19-linux-amd64.sh.zip
         chmod +x SenchaCmd-7.3.0.19-linux-amd64.sh
         ./SenchaCmd-7.3.0.19-linux-amd64.sh -q
-        echo "/home/runner/bin/Sencha/Cmd/7.3.0.19" >> $GITHUB_PATH
+        echo "${HOME}/.local/bin/Sencha/Cmd/7.3.0.19" >> $GITHUB_PATH
         ls -al
         sencha --version
       shell: bash
